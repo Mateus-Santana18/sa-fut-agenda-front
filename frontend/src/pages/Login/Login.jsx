@@ -2,7 +2,25 @@ import React from 'react';
 import Logo from '../../components/Logo/Logo';
 import './Login.css';
 import { useId } from 'react';
+import api from "../config/axios";
 const Login = () => {
+ 
+const { login } = useAuth();
+
+ const handleLogin = async () => {
+      const loginData = {
+        email: "teste@teste.com.br",
+        password: "teste123"
+      };
+      try {
+        const response = await api.post('/auth/login', loginData);      
+        login(response.data.token);
+        navigate("/cadastro");
+      } catch (error) {
+        console.error('Erro ao buscar dados do usuário:', error);
+      }
+    
+  };
 
   const idEmail = useId();
   const idSenha = useId();
