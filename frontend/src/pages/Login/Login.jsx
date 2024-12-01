@@ -2,7 +2,7 @@ import React from 'react';
 import Logo from '../../components/Logo/Logo';
 import './Login.css';
 import { useId } from 'react';
-import api from '../config/api';
+import api from '../../config/axios';
 const Login = () => {
  
 const { login } = useAuth();

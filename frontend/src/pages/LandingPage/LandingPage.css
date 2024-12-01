@@ -1,0 +1,141 @@
+.container-Landing{
+    background-color: #000000;
+    width: 100%;
+  }
+  .topo-Landing{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    background-color: #00A106;
+  }
+  .LblTopo-Landing{
+    font-size: 40px;
+    padding: 12px;
+  }
+  .divLogoLanding{
+    width: 100%;
+    height: 10%;
+  }
+  .divTituloLanding{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 50%;
+  }
+  .tituloEscrita1{
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    height: 10%;
+    padding-bottom: 55px;
+    font-size: 40px;
+    color: #00FF0A;
+  }
+  .LblTitulo-Landing{
+    border-bottom: 2px solid #00FF0A;
+    margin-bottom: 4px;
+    font-size: 128px;
+    font-style: italic;
+    color: #00FF0A;
+    width: 1000px;
+  }
+  .divBotaoLading{
+    display: flex;
+    justify-content: center;
+    height: 65px;
+    margin-top: 60px;
+  }
+  .botaoVisiteLading{
+    width: 416px;
+    height: 65px;
+    border-color: white;
+    background-color: #00A106;
+    font-size: 25px;
+    color: white;
+    border-radius: 5px;
+    border: 4px solid #fff;
+    font-style: italic;
+    font-size: 32px;
+    font-weight: 400;
+    cursor: pointer;
+  }
+  .divInfoLanding{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
+  .lblPosicaolanding{
+    display: flex;
+    border-bottom: 2px solid #00FF0A;
+    align-items: end;
+    width: 98%;
+    height: 100%;
+  }
+  .LblinfoLanding{
+    color: #00FF0A;
+    font-size: 25px;
+    width: 7%;
+    font-style: italic;
+  }
+  .divPrimeiraFotoLanding{
+    display: flex;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    width: 100%;
+    height: 100%;
+    gap: 8px;
+  }
+  .meio-Landing {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 200px;
+    border-bottom: 2px solid #00FF0A;
+  }
+  .quadradoFotoLanding{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+  }
+  .quadradoEscritaLanding{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+  }
+  .foto1Landing{
+    width: 800px;
+    height: 509px;
+    border: 3px solid #00FF0A;
+  }
+  .escritaLblLanding{
+    font-size: 30px;
+  }
+  .escrita1Landing{
+    font-size: 40px;
+    width: 80%;
+    height: 80%;
+  }
+  .baixo-Landing{
+    padding-top: 100px;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 60%;
+    display: flex;
+    gap: 28px;
+  }
+  .linhaLanding{
+    background-color: #00FF0A;
+    width: 265px;
+    border: 3px solid #00FF0A;
+  }

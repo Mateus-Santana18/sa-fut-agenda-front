@@ -1,0 +1,171 @@
+/* Login.css */
+
+* {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.PerfilContainer {
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 100vh;
+}
+
+.topoPerfil {
+    width: 100%;
+    height: 60px;
+}
+
+.meioPerfil {
+    display: flex;
+    justify-content: space-evenly;
+    height: 85%;
+}
+
+.baixoPerfil {
+    width: 100%;
+    height: 61px;
+}
+
+.LadoEsquerdoPerfil {
+    background-color: #222;
+    width: 280px;
+    height: 315px;
+    border-radius: 10px;
+}
+
+.NomeUsuarioPerfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 45px;
+}
+
+.nome {
+    font-size: 20px;
+}
+
+.IdUsuarioPerfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 35px;
+}
+
+.DivLogoPerfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.DataPerfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 35px;
+}
+
+.LadoDireitoPerfil {
+    display: flex;
+    flex-direction: column;
+    background-color: #222;
+    width: 60%;
+    height: 100%;
+    border-radius: 10px;
+
+}
+
+.tituloPerfil {
+    height: 70%;
+}
+
+.infoUsuarioPerfil {
+    height: 30%;
+}
+
+.EditarPerfil {
+    font-size: 35px;
+    height: 50%;
+}
+
+.EditarPerfil2 {
+    font-size: 15px;
+    height: 50%;
+    font-style: italic;
+}
+
+.cimaMeioPerfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 20%;
+    border-bottom: 2px solid rgb(14, 160, 3);
+}
+
+.dadosPerfilCima {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 50%;
+}
+
+.dadosPerfilBaixo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 50%;
+}
+
+.nomes {
+    font-size: 18px;
+    font-style: italic;
+}
+
+.inptS {
+    width: 350px;
+}
+
+.inpt {
+    width: 100%;
+    padding: 5px;
+    border-bottom: 1.5px solid rgb(14, 160, 3);
+    border-right: 0px;
+    background-color: #222;
+    color: lightgray;
+    outline: 0;
+    font-size: 16px;
+}
+
+.botaoSalvarPerfil {
+
+
+    width: 150px;
+    height: 75px;
+    background-color: #09a509;
+    color: #ffffff;
+    border: solid 1.5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+
+    font-size: 22px;
+
+}
+
+.DivBotaoPerfil {
+    height: 150px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}

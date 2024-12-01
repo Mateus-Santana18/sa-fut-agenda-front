@@ -3,10 +3,6 @@ import './Calendario.css';
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import LogoCalendario from '../../components/LogoCalendario/LogoCalendario';
 const Calendario = () => {
-
-
-
-
     return (
         <div className="container-master">
             <div className='topoCalendario'>
@@ -15,7 +11,7 @@ const Calendario = () => {
                 <div className='direitaTopoCalendario'>
                 </div>
                 <div className='cantinhoDoPerfil'>
-                    <img className='iconPerfil' src="./imagens/usuario-de-perfil.png" />
+                    <img className='iconPerfil' src="./images/usuario-de-perfil.png" onClick={() => (console.log("SantanaGay"))}/>
                 </div>
             </div>
             <div className='meioCalendarioPrincipal'>
