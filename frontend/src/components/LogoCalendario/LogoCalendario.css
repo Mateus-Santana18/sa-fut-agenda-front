@@ -1,6 +1,6 @@
-.Logo{
-    width: 200px;
-    height:2,00px;
+.logoCalendario{
+    width: 250px;
+    height:250px;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -1,0 +1,151 @@
+.container-master {
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 100vh;
+}
+
+.topoCalendario {
+    display: flex;
+    width: 100%;
+    height: 10%;
+}
+
+.esquerdaTopoCalendario {
+    width: 50%;
+    height: 100%;
+}
+
+.direitaTopoCalendario {
+    width: 40%;
+    height: 100%;
+}
+
+.cantinhoDoPerfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    height: 100%;
+}
+
+.iconPerfil {
+    cursor: pointer;
+    width: 65px;
+    height: 65px;
+}
+
+.meioCalendarioPrincipal {
+    display: flex;
+    width: 100%;
+    height: 80%;
+    background-color: rgb(41, 41, 41);
+}
+
+.meioEsquerdoCalendario {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    height: 100%;
+    background-color: black;
+
+}
+
+.meioCentralCalendario {
+    border: 2px solid #00a106;
+    display: flex;
+    width: 60%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.meioDireitaCalendario {
+    width: 20%;
+    height: 100%;
+    background-color: black;
+}
+
+.meioTopoCalendario {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    height: 20%;
+    background-color: #1E1E1E;
+}
+
+.seta {
+    cursor: pointer;
+    width: 35%;
+    height: 35%;
+}
+
+.calendario {
+    font-size: 50px;
+}
+
+.meioCalendario {
+    width: 100%;
+    height: 79%;
+    background-color: #1E1E1E;
+}
+
+.baixoCalendario {
+    width: 100%;
+    height: 9%;
+
+}
+
+.parte1 {
+
+    display: flex;
+    justify-content: space-around;
+    font-size: 100px;
+    width: 100%;
+    height: 20%;
+}
+
+.parte2 {
+
+    display: flex;
+    justify-content: space-around;
+    font-size: 100px;
+    width: 100%;
+    height: 20%;
+}
+
+.parte3 {
+
+    display: flex;
+    justify-content: space-around;
+    font-size: 100px;
+    width: 100%;
+    height: 20%;
+}
+
+.parte4 {
+    display: flex;
+    justify-content: space-around;
+    font-size: 100px;
+    width: 100%;
+    height: 20%;
+}
+
+.parte5 {
+
+    display: flex;
+    justify-content: space-around;
+    font-size: 100px;
+    width: 100%;
+    height: 20%;
+}
+
+.dias {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16.5%;
+}
+
+.labelDias {
+    cursor: pointer;
+}
