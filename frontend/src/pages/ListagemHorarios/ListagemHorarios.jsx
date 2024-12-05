@@ -26,7 +26,7 @@ const ListagemHorarios = () => {
         <div className="container-masterListagemHorarios">
             <ToastContainer />
             <div className='topoListagemHorarios'>
-                <div className="bg-[#00FF00] w-10 rounded-[50%] flex justify-center items-center h-10 cursor-pointer" onClick={() => navigate(-1)}>
+                <div className="bg-[#00FF00] w-10 ml-2 mt-2 rounded-[50%] flex justify-center items-center h-10 cursor-pointer" onClick={() => navigate(-1)}>
                     <FiArrowLeft className="icon" />
                 </div>
                 <div className='topoSetaListagemHorarios'>
@@ -65,7 +65,7 @@ const ListagemHorarios = () => {
                                 {
                                     typeof e.reservaId === 'number' && (<button className='w-[125px] h-12 bg-green-500 rounded border-white border-2' onClick={() => {
                                         navigate('/game-list/' + e.reservaId)
-                                    }}>PARTICIPAR</button>)
+                                    }}>VISUALIZAR</button>)
                                 }
                                 {
                                     typeof e.reservaId !== 'number' && (<button className='w-[125px] h-12 bg-green-500 rounded border-white border-2' onClick={() => {

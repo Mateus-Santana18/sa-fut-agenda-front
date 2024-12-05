@@ -10,6 +10,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useAuth } from '../../components/Authentication/useAuth';
 import { CloseOutlined } from '@ant-design/icons';
 import { useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
 
 const customStyles = {
     content: {
@@ -62,7 +63,7 @@ const ListaJogo = () => {
                         <div>
                             {value.adminId === value.usuario.id ? 'ADMINISTRADOR' : 'JOGADOR'}
                         </div>
-                        <div className='lacunas5 flex gap-12 mr-4'>
+                        {/* <div className='lacunas5 flex gap-12 mr-4'>
                             {user.userId === value.adminId && value.adminId !== value.usuario.id && (
                                 <>
                                     <button className='botaoEditarListagemJogador justify-center items-center flex'>
@@ -73,7 +74,7 @@ const ListaJogo = () => {
                                     </button>
                                 </>    
                             )}
-                        </div>
+                        </div> */}
                     </div>
                 )
             },
@@ -81,7 +82,7 @@ const ListaJogo = () => {
     ]
     const { gameId } = useParams();
     const [searchText, setSearchText] = useState(null);
-    const { data: response } = useQuery({
+    const { data: response, refetch } = useQuery({
         queryKey: [gameId, searchText],
         queryFn: () => api.get('/reserva/list-users/' + gameId + '?textQuery=' + searchText),
         initialData: {
@@ -90,11 +91,13 @@ const ListaJogo = () => {
     });
     const data = response.data;
     const [isOpen, setIsOpen] = useState(false);
-    const [newParticipant, setNewParticipant] = useState();
+    const [newParticipantEmail, setNewParticipantEmail] = useState();
+    const [newParticipantFuncao, setNewParticipantFuncao] = useState();
     const isAdmin = response.data.some(e => e.adminId === user.userId);
 
     return (
         <div className="container-masterListagemJogador">
+            <ToastContainer />
             <Modal
                 style={customStyles}
                 isOpen={isOpen}
@@ -103,7 +106,8 @@ const ListaJogo = () => {
                 <div className='flex flex-1 justify-end'>
                     <CloseOutlined className='cursor-pointer' onClick={() => {
                         setIsOpen(false)
-                        setNewParticipant(null)
+                        setNewParticipantEmail(null)
+                        setNewParticipantFuncao(null)
                     }}/>
                 </div>
                 <div className='flex flex-col gap-1'>
@@ -111,12 +115,48 @@ const ListaJogo = () => {
                         E-mail do participante: 
                     </span>
                     <div className='flex flex-col gap-1'>
-                        <Input value={newParticipant} onChange={e => setNewParticipant(e.target.value)} type='text' placeholder='fulano@gmail.com'/>
+                        <Input value={newParticipantEmail} onChange={e => setNewParticipantEmail(e.target.value)} type='text' placeholder='fulano@gmail.com'/>
                     </div>
-                    <Button type='primary'>
-                        Salvar
-                    </Button>
                 </div>
+                <div className='flex flex-col gap-1'>
+                    <span>
+                        Função: 
+                    </span>
+                    <div className='flex flex-col gap-1'>
+                        <Select value={newParticipantFuncao} 
+                            onChange={e => setNewParticipantFuncao(e)} placeholder='LINHA'
+                            options={[
+                                {
+                                    label: 'Linha',
+                                    value: 'LINHA'
+                                },
+                                {
+                                    label: 'Goleiro',
+                                    value: 'Goleiro'
+                                }
+                            ]}
+                        />
+                    </div>
+                </div>
+                <Button className='mt-3' type='primary' onClick={() => {
+                        if (!newParticipantEmail) {
+                            toast('Preencha o campo de e-mail')
+                        }
+                        if (!newParticipantFuncao) {
+                            toast('Preencha o campo de função')
+                        }
+                        api.put('/reserva/add/' + gameId, {
+                            email: newParticipantEmail,
+                            funcao: newParticipantFuncao
+                        }).then(() => {
+                            refetch()
+                            setIsOpen(false)
+                        }).catch(() => {
+                            toast('Falha ao adicionar usuário, verifique se o usuário já foi adicionado')
+                        })
+                    }}>
+                        Salvar
+                </Button>
             </Modal>
             <div className='topoListagemJogador'>
             </div>
