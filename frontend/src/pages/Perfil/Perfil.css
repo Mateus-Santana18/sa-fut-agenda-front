@@ -145,8 +145,6 @@
 }
 
 .botaoSalvarPerfil {
-
-
     width: 150px;
     height: 75px;
     background-color: #09a509;
@@ -158,9 +156,22 @@
     align-items: center;
     justify-content: center;
     font-weight: bold;
-
     font-size: 22px;
+}
 
+.botaoDeletarPerfil {
+    width: 150px;
+    height: 75px;
+    background-color: red;
+    color: #ffffff;
+    border: solid 1.5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 22px;
 }
 
 .DivBotaoPerfil {
