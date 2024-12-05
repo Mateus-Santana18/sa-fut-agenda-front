@@ -1,10 +1,9 @@
-import React from 'react';
 import './Cadastro.css';
 import Logo from '../../components/Logo/Logo';
-// import LogoCadastro from '../../components/LogoCadastro/LogoCadastro';
+import { useNavigate } from 'react-router';
 
 const Cadastro = () => {
-
+  const navigate = useNavigate();
   return (
     <div className="cadastro-container">
       <div className="cadastroCorpo">
@@ -18,7 +17,9 @@ const Cadastro = () => {
             />
           </div>
           <p style={{fontSize: "25px"}}>Possui uma conta?</p>
-          <button className="botaoLoginCadastro" >
+          <button className="botaoLoginCadastro" onClick={() => navigate('/login', {
+            replace: true
+          })}>
             Fazer Login
           </button>
         </div>
@@ -43,7 +44,6 @@ const Cadastro = () => {
               CADASTRAR
             </button>
           </div>
-
         </div>
       </div>
     </div>

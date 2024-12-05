@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:8080/api", 
+  baseURL: "http://localhost:8080", 
   timeout: 10000, 
   headers: {
     "Content-Type": "application/json",
@@ -12,9 +12,9 @@ const api = axios.create({
 
 api.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem("token"); 
+    const token = sessionStorage.getItem("token"); 
     if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
+      config.headers.Authorization = `Bearer ${token.replace('"', '')}`;
     }
     return config;
   },
@@ -29,7 +29,7 @@ api.interceptors.response.use(
   },
   (error) => {
     if (error.response && error.response.status === 401) {
-      window.location.href = "/login";
+      window.location.href = "/";
     }
     return Promise.reject(error);
   },

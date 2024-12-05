@@ -1,0 +1,211 @@
+.container-masterListagemHorarios {
+    background-color: #1E1E1E;
+    width: 100%;
+    height: 100vh;
+}
+
+.topoListagemHorarios {
+    width: 100%;
+    height: 20%;
+    background-color: black;
+    display: flex;
+}
+
+.setaListagemHorarios {
+    width: 50px;
+    height: 50px;
+}
+
+.topoSetaListagemHorarios {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5%;
+    height: 100%;
+
+}
+
+.topoLogoListagemHorarios {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    height: 100%;
+}
+
+.topoTituloListagemHorarios {
+    display: flex;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 100%;
+}
+
+.meioListagemHorarios {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 70%;
+}
+
+.meioCimaListagemHorarios {
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    width: 100%;
+    height: 50%;
+}
+
+.meioBaixoListagemHorarios {
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    width: 100%;
+    height: 50%;
+}
+
+.baixoListagemHorarios {
+    width: 100%;
+    height: 12%;
+
+}
+
+.parteCimaListagemHorarios {
+    font-size: 25px;
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 25%;
+}
+
+.parteMeioListagemHorarios {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 25%;
+}
+
+.parteBaixoListagemHorarios {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 25%;
+    border-bottom: 2px solid #00a106;
+}
+
+.DivbotaoListagemHorarios {
+    gap: 2;
+    justify-content: end;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: 25%;
+}
+
+.botaoListagemHorarios {
+    width: 80px;
+    height: 35px;
+    background-color: #00a106;
+    color: #ffffff;
+    border: solid 1.5px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+
+    font-size: 15px;
+
+}
+
+.espaco1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 100%;
+}
+
+.espaco2 {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+}
+
+.quadrados1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 2px solid #00a106;
+    display: flex;
+    width: 20%;
+    height: 80%;
+    background-color: rgb(2, 2, 2);
+}
+
+.quadrados2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 2px solid #00a106;
+    display: flex;
+    width: 20%;
+    height: 80%;
+    background-color: rgb(2, 2, 2);
+}
+
+.quadrados3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 2px solid #00a106;
+    display: flex;
+    width: 20%;
+    height: 80%;
+    background-color: rgb(2, 2, 2);
+}
+
+.quadrados4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 2px solid #00a106;
+    display: flex;
+    width: 20%;
+    height: 80%;
+    background-color: rgb(2, 2, 2);
+}
+
+.quadrados5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 2px solid #00a106;
+    display: flex;
+    width: 20%;
+    height: 80%;
+    background-color: rgb(2, 2, 2);
+}
+
+.quadrados6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 2px solid #00a106;
+    display: flex;
+    width: 20%;
+    height: 80%;
+    background-color: rgb(2, 2, 2);
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}

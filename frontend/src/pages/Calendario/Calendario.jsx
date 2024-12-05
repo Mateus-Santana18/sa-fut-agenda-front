@@ -1,144 +1,77 @@
-import React from 'react';
-import './Calendario.css';
-import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import {
+    CloseOutlined
+} from '@ant-design/icons';
+import { Select } from 'antd';
+import { format } from 'date-fns';
+import { useState } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import 'react-clock/dist/Clock.css';
+import Modal from 'react-modal';
+import { useNavigate } from 'react-router';
 import LogoCalendario from '../../components/LogoCalendario/LogoCalendario';
+import { FiArrowLeft } from 'react-icons/fi';
+
+const customStyles = {
+    content: {
+      top: '50%',
+      left: '60%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+    },
+  };
+
+const hours = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+
 const Calendario = () => {
+    const [date, setDate] = useState(new Date());
+    const navigate = useNavigate();
+    const [isOpen, setIsOpen] = useState(false);
     return (
-        <div className="container-master">
-            <div className='topoCalendario'>
-                <div className='esquerdaTopoCalendario'>
-                </div>
-                <div className='direitaTopoCalendario'>
-                </div>
-                <div className='cantinhoDoPerfil'>
-                    <img className='iconPerfil' src="./images/usuario-de-perfil.png" onClick={() => (console.log("SantanaGay"))}/>
-                </div>
+        <div className="h-screen bg-black flex">
+            <div className="bg-[#00FF00] mt-2 ml-2 w-10 rounded-[50%] flex justify-center items-center h-10 cursor-pointer" onClick={() => navigate(-1)}>
+                <FiArrowLeft className="icon" />
             </div>
-            <div className='meioCalendarioPrincipal'>
-                <div className='meioEsquerdoCalendario'>
-                    <LogoCalendario />
-                </div>
-                <div className='meioCentralCalendario'>
-                    <div className='meioTopoCalendario'>
-
-                        <FiArrowLeft className="seta" />
-                        <label className='calendario'>Janeiro 2025</label>
-                        <FiArrowRight className="seta" />
-                    </div>
-                    <div className='meioCalendario'>
-                        <div className='parte1'>
-                            <div className='dias'>
-                                <label className='labelDias'>1</label>
-                            </div>
-                            <div className='dias'>
-                                <label className='labelDias'>2</label>
-                            </div>
-                            <div className='dias'>
-                                <label className='labelDias'>3</label>
-                            </div>
-                            <div className='dias'>
-                                <label className='labelDias'>4</label>
-                            </div>
-                            <div className='dias'>
-                                <label className='labelDias'>5</label>
-                            </div>
-                            <div className='dias'>
-                                <label className='labelDias'>6</label>
-                            </div>
-
-                        </div>
-                        <div className='parte2'>
-                            <div className='dias'>
-                                <label className='labelDias'>7</label>
-                            </div>
-                            <div className='dias'>
-                                <label className='labelDias'>8</label>
-                            </div>
-                            <div className='dias'>
-                                <label className='labelDias'>9</label>
-                            </div>
-                            <div className='dias'>
-                                <label className='labelDias'>10</label>
-                            </div>
-                            <div className='dias'>
-                                <label className='labelDias'>11</label>
-                            </div>
-                            <div className='dias'>
-                                <label className='labelDias'>12</label>
-                            </div>
-
-                        </div>
-                        <div className='parte3'>
-                            <div className='dias'>
-                                <label className='labelDias'>13</label>
-                            </div>
-                            <div className='dias'>
-                                <label className='labelDias'>14</label>
-                            </div>
-                            <div className='dias'>
-                                <label className='labelDias'>15</label>
-                            </div>
-                            <div className='dias'>
-                                <label className='labelDias'>16</label>
-                            </div>
-                            <div className='dias'>
-                                <label className='labelDias'>17</label>
-                            </div>
-                            <div className='dias'>
-                                <label className='labelDias'>18</label>
-                            </div>
-
-                        </div>
-                        <div className='parte4'>
-                            <div className='dias'>
-                                <label className='labelDias'>19</label>
-                            </div>
-                            <div className='dias'>
-                                <label className='labelDias'>20</label>
-                            </div>
-                            <div className='dias'>
-                                <label className='labelDias'>21</label>
-                            </div>
-                            <div className='dias'>
-                                <label className='labelDias'>22</label>
-                            </div>
-                            <div className='dias'>
-                                <label className='labelDias'>23</label>
-                            </div>
-                            <div className='dias'>
-                                <label className='labelDias'>24</label>
-                            </div>
-
-                        </div>
-                        <div className='parte5'>
-                            <div className='dias'>
-                                <label className='labelDias'>25</label>
-                            </div>
-                            <div className='dias'>
-                                <label className='labelDias'>26</label>
-                            </div>
-                            <div className='dias'>
-                                <label className='labelDias'>27</label>
-                            </div>
-                            <div className='dias'>
-                                <label className='labelDias'>28</label>
-                            </div>
-                            <div className='dias'>
-                                <label className='labelDias'>29</label>
-                            </div>
-                            <div className='dias'>
-                                <label className='labelDias'>30</label>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-                <div className='meioDireitaCalendario'>
-                </div>
+            <div className='ml-8 flex justify-center items-center'>
+                <LogoCalendario />
             </div>
-            <div className='baixoCalendario'>
-
+            <div className='flex flex-row flex-1 justify-center items-center w-full h-full'>
+                <div className='flex flex-row items-center gap-8 border border-green-400 pr-4'>
+                    <Calendar onChange={date => {
+                        if (date.getDay() >= new Date().getDay()) {
+                            setIsOpen(true);
+                            setDate(date)                    
+                        }
+                    }} value={date} className="w-full h-full" />
+                    <Modal
+                        style={customStyles}
+                        isOpen={isOpen}
+                        contentLabel="Example Modal"
+                    >
+                        <div className='flex flex-1 justify-end'>
+                            <CloseOutlined className='cursor-pointer' onClick={() => setIsOpen(false)}/>
+                        </div>
+                        <div className='flex flex-col gap-1'>
+                            <span>
+                                Selecione seu horario: 
+                            </span>
+                            <Select 
+                                className='w-72 text-white'
+                                onChange={(e) => {
+                                    navigate('/hour-list/' + `${format(date, 'yyyy-MM-dd')}:${e}`);
+                                }}
+                                options={hours.map(h => {
+                                    return {
+                                        label: `${h}:00`,
+                                        value: h
+                                    }
+                                })}
+                            />
+                        </div>
+                    </Modal>
+                </div>
             </div>
         </div>
     );

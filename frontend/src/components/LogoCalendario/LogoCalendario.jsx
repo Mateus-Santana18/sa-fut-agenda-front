@@ -1,9 +1,7 @@
-import React from 'react'
-
 function LogoCalendario() {
   return (
     <div>
-     <img className='logoCalendario' src="./images/bordaPreta.png"/>
+     <img className='logoCalendario' src="./images/bordaPreta.png" width={300}/>
     </div>
   )
 }
