@@ -27,6 +27,23 @@ O **FUT AGENDA** é uma plataforma inovadora que automatiza o processo de alugue
 
 ---
 
+## Protótipos
+
+![landing page](https://raw.githubusercontent.com/Mateus-Santana18/sa-fut-agenda-front/refs/heads/main/prototipo-telas/Landing%20Page%20Dark.png)
+##
+![tela de login](https://raw.githubusercontent.com/Mateus-Santana18/sa-fut-agenda-front/refs/heads/main/prototipo-telas/Pagina%20Login%20Dark.png)
+##
+![tela de cadastro](https://raw.githubusercontent.com/Mateus-Santana18/sa-fut-agenda-front/refs/heads/main/prototipo-telas/Pagina%20Cadastro%20Dark.png)
+##
+![tela de calendario](https://raw.githubusercontent.com/Mateus-Santana18/sa-fut-agenda-front/refs/heads/main/prototipo-telas/tela%20Calend%C3%A1rio.png)
+##
+**Listagem de horarios disponiveis para aluguel**
+![listagem de horarios disponiveis](https://raw.githubusercontent.com/Mateus-Santana18/sa-fut-agenda-front/refs/heads/main/prototipo-telas/telaHorarios.png)
+##
+![Lista de Jogadores na Partida](https://raw.githubusercontent.com/Mateus-Santana18/sa-fut-agenda-front/refs/heads/main/prototipo-telas/ListaJogadoresPartida.png)
+##
+![tela de perfil](https://raw.githubusercontent.com/Mateus-Santana18/sa-fut-agenda-front/refs/heads/main/prototipo-telas/Pagina%20Perfil.png)
+##
 ## 📋 Requisitos de Instalação  
 
 - **Node.js** (versão 16 ou superior).  
