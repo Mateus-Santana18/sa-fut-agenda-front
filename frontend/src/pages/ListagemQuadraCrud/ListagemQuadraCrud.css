@@ -1,0 +1,248 @@
+
+.container-masterListagemJogador {
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 100vh;
+}
+
+.topoListagemJogador {
+    width: 100%;
+    height: 5%;
+}
+
+.meioListagemJogador {
+    display: flex;
+    width: 100%;
+    height: 80%;
+    background-color: rgb(41, 41, 41);
+}
+
+.meioEsquerdoListagemJogador {
+    width: 5%;
+    height: 100%;
+    background-color: black;
+
+}
+
+.meioCentralListagemJogador {
+    display: flex;
+    width: 90%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.meioDireitaListagemJogador {
+    width: 5%;
+    height: 100%;
+    background-color: black;
+}
+
+.topoMeioListagemJogador {
+    display: flex;
+    width: 100%;
+    height: 30%;
+}
+
+.topoCentralMeioEsquerdoListagemJogador {
+    padding-left: 15px;
+    padding-top: 15px;
+    width: 33%;
+    height: 25%;
+}
+
+.topoCentralMeioLOGOListagemJogador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 34%;
+    height: 100%;
+}
+
+.topoCentralMeioDireitoListagemJogador {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-right: 80px;
+    padding-top: 80px;
+    width: 33%;
+    height: 25%;
+}
+
+.botaoAddParticipante {
+    width: 190px;
+    height: 40px;
+    font-size: 16px;
+    background-color: #00FF00;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.botaoPesquisaParticipante {
+    width: 190px;
+    height: 40px;
+    font-size: 16px;
+
+    background-color: rgb(54, 54, 54);
+    cursor: pointer;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.meioMeioListagemJogador {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    width: 100%;
+    height: 7%;
+}
+
+.meioBaixoListagemJogador {
+    width: 100%;
+    height: 12%;
+}
+
+.baixoListagemJogador {
+    width: 100%;
+    height: 15%;
+
+}
+
+.icon-button {
+    background-color: #00FF00;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+}
+
+.icon {
+    color: #ffffff;
+    font-size: 35px;
+}
+
+.divDadosListagemJogador {
+    border-bottom: 2px solid #00FF00;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 30%;
+
+}
+
+.DadosListagemJogador {
+    border-bottom: 2px solid #00FF00;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 70%;
+}
+
+.labeldoJogador1 {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 19%;
+    height: 100%;
+}
+
+.labeldoJogador2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 19%;
+    height: 100%;
+}
+
+.labeldoJogador3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 19%;
+    height: 100%;
+}
+
+.labeldoJogador4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 19%;
+    height: 100%;
+}
+
+.labeldoJogador5 {
+    width: 25%;
+    height: 100%;
+}
+
+.lacunas1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 19%;
+    height: 100%;
+}
+
+.lacunas2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 19%;
+    height: 100%;
+}
+
+.lacunas3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 19%;
+    height: 100%;
+}
+
+.lacunas4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 19%;
+    height: 100%;
+}
+
+.lacunas5 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 25%;
+    height: 100%;
+
+}
+
+.botaoExcluirListagemJogador {
+    color: black;
+    background-color: #ff0000;
+    border-radius: 5px;
+    width: 85px;
+    height: 40px;
+}
+
+.botaoEditarListagemJogador {
+    color: #ffffff;
+    background-color: #00FF00;
+    border-radius: 5px;
+    width: 85px;
+    height: 40px;
+}
+
+.lapis {
+    width: 20px;
+}
+
+.lupa {
+    width: 20px;
+    padding-left: 10px;
+}

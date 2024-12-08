@@ -1,15 +1,14 @@
-import './ListagemJogo.css';
+import './ListagemQuadraCrud.css';
 import { FiArrowLeft } from 'react-icons/fi';
 import LogoListagemJogador from '../../components/LogoListagemJogador/LogoListagemJogador';
 import { useNavigate, useParams } from 'react-router';
-import lupaPng from "/images/lupa.png";
 import { Button, Input, Select, Table } from 'antd';
 import api from '../../config/axios';
 import Modal from 'react-modal';
 import { useQuery } from '@tanstack/react-query';
 import { useAuth } from '../../components/Authentication/useAuth';
 import { CloseOutlined } from '@ant-design/icons';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 
 const customStyles = {
@@ -23,7 +22,7 @@ const customStyles = {
     },
   };
 
-const ListaJogo = () => {
+const ListagemQuadraCrud = () => {
     const navigate = useNavigate();
     const { user } = useAuth();
     
@@ -32,75 +31,33 @@ const ListaJogo = () => {
             title: 'Nome',
             key: 'name',
             align: 'center',
-            render: (value) => <a>{value.usuario.nome}</a>,
+            render: (value) => <a>{value.nome}</a>,
           },
           {
-            title: 'E-mail',
-            key: 'email',
+            title: 'Tipo',
+            key: 'tipo',
             align: 'center',
-            render: (value) => <a>{value.usuario.email}</a>,
-          },
-          {
-            title: 'Função',
-            dataIndex: 'funcao',
-            key: 'funcao',
-            align: 'center',
-            render: (text) => <a>{text}</a>,
-          },
-        //   {
-        //     title: 'Comprovante',
-        //     dataIndex: 'comprovante',
-        //     key: 'comprovante',
-        //     align: 'center',
-        //     render: (text) => <a>{text}</a>,
-        //   },
-          {
-            title: 'Hierarquia',
-            key: 'hierarquia',
-            render: (value) => {
-                return (
-                    <div className='flex w-full justify-between'>
-                        <div>
-                            {value.adminId === value.usuario.id ? 'ADMINISTRADOR' : 'JOGADOR'}
-                        </div>
-                        <div className='lacunas5 flex gap-12 mr-4'>
-                            {user.userId === value.adminId && value.adminId !== value.usuario.id && (
-                                <>
-                                    {/* <button className='botaoEditarListagemJogador justify-center items-center flex'>
-                                        <img className='lapis' src="../../images/ferramenta-lapis.png" />
-                                    </button> */}
-                                    <button className='botaoExcluirListagemJogador justify-center items-center flex' onClick={() => {
-                                        api.delete('/reserva/add/' + gameId + '/' + value.usuario.email).then(() => {
-                                            refetch()
-                                        }).catch(() => {
-                                            toast('Falha ao remover usuário')
-                                        })
-                                    }}>
-                                        <img className='lapis' src="../../images/lixeira.png" />
-                                    </button>
-                                </>    
-                            )}
-                        </div>
-                    </div>
-                )
-            },
+            render: (text) => <a>{text.tipo}</a>,
           },
     ]
-    const { gameId } = useParams();
     // const [searchText, setSearchText] = useState(null);
     const { data: response, refetch } = useQuery({
-        queryKey: [gameId],
-        queryFn: () => api.get('/reserva/list-users/' + gameId),
+        queryKey: [],
+        queryFn: () => api.get('/quadra'),
         initialData: {
             data: []
         }
     });
+    useEffect(() => {
+        if (user.cargo !== 'ADMIN') {
+            navigate(-1)
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
     const data = response.data;
     const [isOpenAdd, setIsOpenAdd] = useState(false);
     const [newParticipantEmail, setNewParticipantEmail] = useState();
     const [newParticipantFuncao, setNewParticipantFuncao] = useState();
-    const isAdmin = response.data.some(e => e.adminId === user.userId) || user.cargo === 'ADMIN';
-
     return (
         <div className="container-masterListagemJogador">
             <ToastContainer />
@@ -118,27 +75,32 @@ const ListaJogo = () => {
                 </div>
                 <div className='flex flex-col gap-1'>
                     <span>
-                        E-mail do participante: 
+                        Nome da quadra: 
                     </span>
                     <div className='flex flex-col gap-1'>
-                        <Input value={newParticipantEmail} onChange={e => setNewParticipantEmail(e.target.value)} type='text' placeholder='fulano@gmail.com'/>
+                        <Input value={newParticipantEmail} onChange={e => setNewParticipantEmail(e.target.value)} type='text' placeholder='quadra'/>
                     </div>
                 </div>
                 <div className='flex flex-col gap-1'>
                     <span>
-                        Função: 
+                        Tipo: 
                     </span>
                     <div className='flex flex-col gap-1'>
                         <Select value={newParticipantFuncao} 
-                            onChange={e => setNewParticipantFuncao(e)} placeholder='LINHA'
+                            defaultValue={'SOCIETY'}
+                            onChange={e => setNewParticipantFuncao(e)} placeholder='Society'
                             options={[
                                 {
-                                    label: 'Linha',
-                                    value: 'LINHA'
+                                    label: 'Society',
+                                    value: 'SOCIETY'
                                 },
                                 {
-                                    label: 'Goleiro',
-                                    value: 'Goleiro'
+                                    label: 'Grama',
+                                    value: 'GRAMA'
+                                },
+                                {
+                                    label: 'Futsal',
+                                    value: 'FUTSAL'
                                 }
                             ]}
                         />
@@ -146,19 +108,19 @@ const ListaJogo = () => {
                 </div>
                 <Button className='mt-3' type='primary' onClick={() => {
                         if (!newParticipantEmail) {
-                            toast('Preencha o campo de e-mail')
+                            toast('Preencha o campo nome')
                         }
                         if (!newParticipantFuncao) {
-                            toast('Preencha o campo de função')
+                            toast('Preencha o campo tipo')
                         }
-                        api.put('/reserva/add/' + gameId, {
-                            email: newParticipantEmail,
-                            funcao: newParticipantFuncao
+                        api.post('/quadra', {
+                            nome: newParticipantEmail,
+                            tipo: newParticipantFuncao
                         }).then(() => {
                             refetch()
                             setIsOpenAdd(false)
                         }).catch(() => {
-                            toast('Falha ao adicionar usuário, verifique se o usuário já foi adicionado')
+                            toast('Falha ao adicionar quadra, verifique se a quadra já foi adicionada')
                         })
                     }}>
                         Salvar
@@ -180,18 +142,9 @@ const ListaJogo = () => {
                             <LogoListagemJogador />
                         </div>
                         <div className='topoCentralMeioDireitoListagemJogador flex flex-col gap-8'>
-                            {isAdmin && (<button className='bg-[#00FF00] w-52 text-white h-12 py-1 px-3 border-white border-x-2 border-y-2 rounded-md' onClick={() => {
+                            <button className='bg-[#00FF00] w-52 text-white h-12 py-1 px-3 border-white border-x-2 border-y-2 rounded-md' onClick={() => {
                                 setIsOpenAdd(true)
-                            }}>Adicionar Participante</button>)}
-                            {isAdmin && (<button className='h-12 w-52 bg-red-600 text-white py-1 px-3 border-white border-x-2 border-y-2 rounded-md' onClick={() => {
-                                api.delete('/reserva/' + gameId)
-                                    .then(() => {
-                                        navigate(-1)
-                                    })
-                                    .catch(() => {
-                                        toast.error('Falha ao desmarcar horário')
-                                    })
-                            }}>Desmarcar Horário</button>)}
+                            }}>Adicionar Quadra</button>
                         </div>
                     </div>
                     {/* <div className='meioMeioListagemJogador mb-2'>
@@ -213,4 +166,4 @@ const ListaJogo = () => {
 
 };
 
-export default ListaJogo;
+export default ListagemQuadraCrud;

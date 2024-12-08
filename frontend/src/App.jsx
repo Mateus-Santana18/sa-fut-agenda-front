@@ -11,6 +11,7 @@ import { AuthComponent } from './components/Authentication/Auth'
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css'
 import { ConfigProvider, theme } from "antd";
+import ListagemQuadraCrud from './pages/ListagemQuadraCrud/ListagemQuadraCrud'
 const { darkAlgorithm } = theme;
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/calendar" element={<AuthComponent component={<Calendario />}/>} />
           <Route path="/profile-edit" element={<AuthComponent component={<Perfil />}/>} />
+          <Route path="/quadra-list" element={<AuthComponent component={<ListagemQuadraCrud />}/>} />
           <Route path="/game-list/:gameId" element={<AuthComponent component={<ListaJogo />}/>} />
           <Route path="/hour-list/:date" element={<AuthComponent component={<ListagemHorarios />}/>} />
           <Route
