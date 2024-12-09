@@ -67,9 +67,9 @@ const LandingPage = () => {
       </div>
       <div className='baixo-Landing'>
         <img src="./images/instagram.png" height={75} width={75}/>
-        <label >Copyright © 2024 Fut Agenda – Todos os direitos reservados.</label>
+        <label className='lblFooter'>Copyright © 2024 Fut Agenda – Todos os direitos reservados.</label>
         <div className='linhaLanding'></div>
-        <label >Desenvolvido por futagenda@gmail.com</label>
+        <label className='lblFooter'>Desenvolvido por futagenda@gmail.com</label>
       </div>
     </div>
   );

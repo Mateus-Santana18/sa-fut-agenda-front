@@ -26,6 +26,7 @@
   
   .tituloCadastro {
     font-size: 45px;
+    color: #FFFFFF;
   }
 
   .tituloCadastroAlinhar{
@@ -37,6 +38,7 @@
   .labelCadastro {
     margin: 10px 0 5px;
     font-size: 25px;
+    color: #FFFFFF;
   }
   .inputCadastro{
     width: 98%;
