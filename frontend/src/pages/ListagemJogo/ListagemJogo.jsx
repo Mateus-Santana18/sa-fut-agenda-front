@@ -138,7 +138,7 @@ const ListaJogo = () => {
                                 },
                                 {
                                     label: 'Goleiro',
-                                    value: 'Goleiro'
+                                    value: 'GOLEIRO'
                                 }
                             ]}
                         />
