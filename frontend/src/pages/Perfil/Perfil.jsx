@@ -4,6 +4,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import { useAuth } from '../../components/Authentication/useAuth';
 import api from '../../config/axios';
 import './Perfil.css';
+import { FiArrowLeft } from 'react-icons/fi';
 
 const Perfil = () => {
     const navigate = useNavigate();
@@ -24,7 +25,9 @@ const Perfil = () => {
         <div className='PerfilContainer'>
             <ToastContainer />
             <div className='topoPerfil'>
-
+                <div className="bg-[#00FF00] mt-2 ml-2 w-10 rounded-[50%] flex justify-center items-center h-10 cursor-pointer" onClick={() => navigate(-1)}>
+                    <FiArrowLeft className="icon" />
+                </div>
             </div>
             <div className='meioPerfil'>
                 {/* <div className='LadoEsquerdoPerfil'>
