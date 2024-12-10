@@ -40,7 +40,7 @@ const ListagemHorarios = () => {
                 </div>
             </div>
             <div className='meioListagemHorarios'>
-                <div className='w-full flex gap justify-evenly p-24'>
+                <div className='w-full grid grid-cols-3 gap-4 justify-evenly p-24'>
                     {response.data.map(e => {
                         const formatString = 'yyyy-MM-dd:HH';
                         const date = parse(dateParam, formatString, new Date());
